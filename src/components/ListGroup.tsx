@@ -1,21 +1,23 @@
+interface Props {
+  items: string[];
+  heading: string;
+  onSelectItem: (item: string) => void;
+}
+
+
 import { useState } from "react";
 
 
 
-function ListGroup() {
-  let items = [
-    'Physics',
-    'Math',
-    'Quantum',
-    'Photonic'
-  ];
+function ListGroup({items, heading , onSelectItem}: Props) {
+  
   //let selectedIndex = 0 ;
   // HOOK
   const [selectedIndex , setSelectedIndex] = useState(-1)
-  console.log("component",selectedIndex);
+
   return(
     <>
-    <h1>List</h1>
+    <h1>{heading}</h1>
     {items.length === 0 && <p>No item found</p>}
     <ul className="list-group">
       {
@@ -24,7 +26,7 @@ function ListGroup() {
        onClick={() => {
         
         setSelectedIndex(index);
-        console.log("callback",selectedIndex);
+        onSelectItem(item)
       }}
        >
         {item}</li>)
