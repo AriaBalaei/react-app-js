@@ -1,15 +1,10 @@
-import ListGroup from "./components/ListGroup"
+import Button from "./components/Button";
+
 function App() {
-  const handelSelectItem = ( item: string) => {
-    console.log(item)
-  }
-  let items = [
-    'Physics',
-    'Math',
-    'Quantum',
-    'Photonic'
-  ];
-  return <div><ListGroup items={items} heading='List' onSelectItem={handelSelectItem}/></div>
+  
+  return <div>
+    <Button onClick={() => console.log('Clicked')}>My Button</Button>
+  </div>
 }
 
 export default App;
