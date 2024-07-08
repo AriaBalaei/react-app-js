@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import './Alert.css'
 interface Props{
   children: ReactNode;
   onClose: () => void;
